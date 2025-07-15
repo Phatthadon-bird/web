@@ -1,0 +1,356 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* กำหนดรูปแบบพื้นฐาน */
+body {
+  font-family: 'Kanit', sans-serif;
+  background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
+  color: #333;
+  padding-top: 80px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* เฮดเดอร์ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* การจัดตำแหน่งเมนูไปขวาบน */
+header nav {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* ปุ่มธีม */
+#toggleTheme {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: white;
+  color: #d32f2f;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#toggleTheme:hover {
+  background-color: #d32f2f;
+  color: white;
+  transform: scale(1.1);  /* ขยายปุ่มเมื่อเมาส์วาง */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* กำหนดพื้นที่หลัก */
+main {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* รูปภาพ */
+.football-img {
+  display: block;
+  margin: 20px auto;
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.football-img:hover {
+  transform: scale(1.1);  /* ขยายขนาดเมื่อเมาส์วาง */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);  /* เพิ่มเงา */
+}
+
+/* ทีมโปรด */
+.teams ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.teams li {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teams li:hover {
+  transform: scale(1.1);  /* ขยายขนาดเมื่อวางเมาส์ */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);  /* เงา */
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* การ์ดนักเตะ */
+.player-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.player-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.player-card h3 {
+  font-size: 1.4rem;
+  color: #d32f2f;
+}
+
+.player-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.player-card a {
+  text-decoration: none;
+  color: #d32f2f;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.player-card a:hover {
+  color: #f39c12;
+}
+
+/* ตารางการแข่งขัน */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #d32f2f;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ฟุตเตอร์ */
+footer {
+  background-color: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* ธีมมืด */
+body.dark {
+  background-color: #121212;
+  color: #ccc;
+}
+
+body.dark header {
+  background-color: #1c1c1c;
+}
+
+body.dark main {
+  background-color: #222;
+}
+
+body.dark footer {
+  background-color: #1c1c1c;
+}
+
+body.dark #toggleTheme {
+  background-color: #333;
+  color: #fff;
+}
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* กำหนดรูปแบบพื้นฐาน */
+body {
+  font-family: 'Kanit', sans-serif;
+  background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
+  color: #333;
+  padding-top: 80px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* เฮดเดอร์ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* ปุ่มธีม */
+#toggleTheme {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: white;
+  color: #d32f2f;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#toggleTheme:hover {
+  background-color: #d32f2f;
+  color: white;
+  transform: scale(1.1);  /* ขยายปุ่มเมื่อเมาส์วาง */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* กำหนดพื้นที่หลัก */
+main {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* การจัดการการ์ดนักเตะ */
+.player-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.player-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.player-card h3 {
+  font-size: 1.4rem;
+  color: #d32f2f;
+}
+
+.player-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.player-card a {
+  text-decoration: none;
+  color: #d32f2f;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.player-card a:hover {
+  color: #f39c12;
+}
+
